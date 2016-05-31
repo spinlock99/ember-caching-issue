@@ -4,8 +4,10 @@ models: {{model.length}}<br>
 {{#each model as |task|}}
   name: {{task.name}}<br>
 {{/each}}
-
-tasks: {{tasks.length}}<br>
-{{#each tasks as |task|}}<br>
+<br>
+<br>
+tasks: {{filteredTasks.length}}<br>
+{{#each filteredTasks as |task|}}<br>
   name: {{task.name}}
 {{/each}}
+

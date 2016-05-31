@@ -1,11 +1,9 @@
 import Ember from 'ember';
+import FilteredTask from '../mixins/filtered-task';
 
-export default Ember.Route.extend({
-  tasks: Ember.computed(function () { this.store.peekAll('task'); }),
-
+export default Ember.Route.extend(FilteredTask, {
   model() {
-    let task = this.store.createRecord('task', {name: 'wat?'});
-    task.save();
-    return this.get('tasks');
+    Ember.run.later(this, function() { this.store.findAll('task'); }, 1000);
+    return this.get('filteredTasks');
   }
 });

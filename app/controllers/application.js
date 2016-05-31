@@ -1,5 +1,5 @@
 import Ember from 'ember';
+import FilteredTask from '../mixins/filtered-task';
 
-export default Ember.Controller.extend({
-  tasks: Ember.computed(function () { this.store.peekAll('task'); }),
+export default Ember.Controller.extend(FilteredTask, {
 });
